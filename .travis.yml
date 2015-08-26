@@ -1,7 +1,6 @@
 language: cpp
-install:
-  - sh ./tools/get_phsem
 script:
+  - sh tools/get_phsem
   - sh -x bootstrap.sh
   - env CFLAGS="-Wall -Wextra -I$HOME/pthsem/include -L$HOME/pthsem/lib" CPPFLAGS="-Wall -Wextra -I$HOME/pthsem/include -L$HOME/pthsem/lib" ./configure --without-pth-test --disable-systemd
   - make
